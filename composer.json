@@ -4,16 +4,39 @@
   "type": "project",
   "minimum-stability": "dev",
   "license": "MIT",
+
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "muqsit/simplepackethandler",
+        "version": "0.1.3",
+        "source": {
+          "url": "https://github.com/Muqsit/SimplePacketHandler.git",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    }
+  ],
+
   "require-dev": {
+    "pocketmine/pocketmine-mp": "^5.0.0",
     "phpstan/phpstan": "^1.2.0",
     "phpstan/phpstan-strict-rules": "^1.0",
     "phpstan/extension-installer": "^1.0"
   },
+
+  "require" : {
+    "muqsit/simplepackethandler": "0.1.3"
+  },
+
   "autoload": {
     "psr-0": {
       "JavierLeon9966\\BlockLagFix\\": "src"
     }
   },
+
   "config": {
     "allow-plugins": {
       "phpstan/extension-installer": true
