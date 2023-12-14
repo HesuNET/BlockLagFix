@@ -23,17 +23,19 @@ use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\world\BlockTransaction;
 use pocketmine\world\World;
+
+use Closure;
 use function count;
 
 final class BlockLagFix extends PluginBase{
 
 	private IPacketInterceptor $handler;
 
-	/** @phpstan-var \Closure(BlockActorDataPacket, NetworkSession): bool */
-	private \Closure $handleBlockActorData;
+	/** @phpstan-var Closure(BlockActorDataPacket, NetworkSession): bool */
+	private Closure $handleBlockActorData;
 
-	/** @phpstan-var \Closure(UpdateBlockPacket, NetworkSession): bool */
-	private \Closure $handleUpdateBlock;
+	/** @phpstan-var Closure(UpdateBlockPacket, NetworkSession): bool */
+	private Closure $handleUpdateBlock;
 	private ?Player $lastPlayer = null;
 
 	/**
